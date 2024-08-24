@@ -12,7 +12,7 @@ public class GreetingController {
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong(); // Id mock
 
-    @RequestMapping("/greeting") // mapeia a requisição
+    @RequestMapping("/greeting")
     public Greeting greeting(
             @RequestParam(value = "name", defaultValue = "World") String name){ // parametros opcionais
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
